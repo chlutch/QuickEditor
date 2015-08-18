@@ -7,13 +7,11 @@ import java.util.ResourceBundle;
 /**
  * Created by asif on 8/18/2015.
  */
-public class QuickEditor {
+public class QuickEditor extends JFrame {
     /**
      * variables declaration
      */
     JFrame jFrame;
-    JMenuBar jMenuBar;
-
 
     /**
      * ResourceBundle variables for internationalization and easier modification
@@ -30,27 +28,29 @@ public class QuickEditor {
         prepareResourceBundle();
 
         jFrame = new JFrame(appNameResourceBundle.getString("ApplicationName"));
+        addMenu = new AddMenu(jFrame);
 
-        jMenuBar = new JMenuBar();
+    }
 
-        addMenu = new AddMenu(jMenuBar);
-
+    public static void main(String[] args) {
+        QuickEditor quickEditor = new QuickEditor();
+        quickEditor.prepareGUI();
     }
 
     private void prepareResourceBundle() {
 
         /**
          * Delete this portion in case you are just separating string from the code
-         * also delete the 'locale' argument in the next portion
+         * also delete the 'strings' argument in the next portion
          */
-        String country = new String("fr");
-        String language = new String("Fr");
+        String country = "fr";
+        String language = "Fr";
         Locale locale = new Locale(country, language);
 
         /**
          * The dot specifies a directory before the file name
          */
-        appNameResourceBundle = ResourceBundle.getBundle("res.locale.ApplicationName", locale);
+        appNameResourceBundle = ResourceBundle.getBundle("res.strings.ApplicationName", locale);
     }
 
     public void prepareGUI(){
@@ -66,13 +66,6 @@ public class QuickEditor {
          * addComponents is a method in AddMenu Class which adds JMenu to JMenuBar
          */
         addMenu.addComponents();
-
-        jFrame.setJMenuBar(jMenuBar);
         jFrame.setVisible(true);
-    }
-
-    public static void main(String [] args){
-        QuickEditor quickEditor = new QuickEditor();
-        quickEditor.prepareGUI();
     }
 }

@@ -5,13 +5,15 @@ import java.util.ResourceBundle;
  * Created by asif on 8/18/2015.
  */
 public class AddMenu {
+    JFrame jFrame;
     JMenuBar jMenuBar;
     JMenu fileMenu, viewMenu, helpMenu;
     ResourceBundle menuResourceBundle;
 
-    public AddMenu(JMenuBar jMenuBar) {
-        this.jMenuBar = jMenuBar;
-        menuResourceBundle = ResourceBundle.getBundle("res.locale.Menus");
+    public AddMenu(JFrame jFrame) {
+        jMenuBar = new JMenuBar();
+        jFrame.setJMenuBar(jMenuBar);
+        menuResourceBundle = ResourceBundle.getBundle("res.strings.Menus");
         createComponentObjects();
     }
 
