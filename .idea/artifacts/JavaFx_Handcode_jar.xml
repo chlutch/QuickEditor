@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaFx Handcode:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaFx_Handcode_jar</output-path>
+    <root id="archive" name="JavaFx Handcode.jar">
+      <element id="module-output" name="QuickEditor" />
+    </root>
+  </artifact>
+</component>
